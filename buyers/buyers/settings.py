@@ -24,7 +24,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'basic_app/templates/basic_app')
 SECRET_KEY = ')lo8!lnh4&_v^jrxq2=xr^)s*tuv%m2e7-(h4)^njyx9%9z*cy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['smanish35.pythonanywhere.com',]
 
