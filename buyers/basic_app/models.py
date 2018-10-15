@@ -12,5 +12,8 @@ class Customers(models.Model):
         self.purchased_date = timezone.now()
         self.save()
 
+    def get_absolute_url(self):
+        return reverse("customers_detail",kwargs={'pk':self.pk})
+
     def __str__(self):
         return self.user
