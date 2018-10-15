@@ -14,6 +14,15 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 class AboutView(TemplateView):
     template_name = 'about.html'
 
+class AppraisalView(TemplateView):
+    template_name = 'appraisal.html'
+
+class InventoryView(TemplateView):
+    template_name = 'inventory.html'
+
+class PurchaseView(TemplateView):
+    template_name = 'purchase.html'
+
 class CustomersListView(ListView):
     model = Customers
 
