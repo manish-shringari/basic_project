@@ -1,0 +1,20 @@
+{% extends 'basic_app/base.html' %}
+
+{% block content %}
+
+
+        <h1 class='posttitle loader'>{{ post.title }}</h1>
+
+        {% if customers.purchased_date %}
+            <div class="date postdate">
+                {{ purchased.published_date }}
+            </div>
+
+        {% else %}
+            <a class="btn btn-default" href="">Not purchased</a>
+        {% endif %}
+
+      <p class='postcontent' >{{ customers.product|safe|linebreaksbr }}</p>
+
+
+{% endblock %}

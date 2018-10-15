@@ -1,0 +1,18 @@
+{% extends 'basic_app/base.html' %}
+
+{% block content %}
+<div class="centerstage">
+
+
+    {% for costomer in customers_list %}
+        <div class="post">
+
+            <h1><a href="{% url 'customers_detail' pk=post.pk %}">{{ customer.product }}</a></h1>
+            <div class="date">
+                <p>Purchased on: {{ customer.purchased_date|date:"D M Y"}}</p>
+            </div>
+
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
