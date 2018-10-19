@@ -1,17 +1,18 @@
 {% extends 'basic_app/base.html' %}
 
 {% block content %}
-<div class="centerstage">
-    <h3>Welcome to Buyers Statistics</h3>
-
-    {% for costomer in customers_list %}
+<div class="topnav-right">
+    <p>
+        <div class="text-right">
+        {% if user.is_authenticated %}
+            <u><b><a class="text-right"  href="{% url 'customers_new' %}" >New User</a></b></u>
+        {% endif %}
+        </div>
+    </p>
+    {% for customer in customers_list %}
         <div class="post">
 
-            <h1><a href="{% url 'customers_detail' pk=post.pk %}">{{ customer.product }}</a></h1>
-            <div class="date">
-                <p>Purchased on: {{ customer.purchased_date|date:"D M Y"}}</p>
-            </div>
-
+            <h1><a href="{% url 'customers_detail' pk=customer.pk %}">{{ customer.First_name }}</a></h1>
         </div>
     {% endfor %}
 </div>

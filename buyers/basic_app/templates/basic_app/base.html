@@ -32,28 +32,19 @@
 
 
       <ul class="nav navbar-nav">
-        <li><a class='navbar-brand bigbrand' href="{% url 'customers_list' %}">Buyers Statistics</a></li>
+        <li><a href="{% url 'customers_list' %}">Buyers Statistics</a></li>
         <li><a href="{% url 'appraisal'%}">Buyer Appraisal</a></li>
         <li><a href="{% url 'inventory'%}">Inventory Analysis</a></li>
         <li><a href="{% url 'purchase'%}">My purchases</a></li>
-        <li><a href="{% url 'about'%}">About</a></li>
 
 
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
         {% if user.is_authenticated %}
-        <li>
-          <a href="{% url 'customers_new' %}" >New Buyer</a>
-        </li>
-
-          <li><a href="{% url 'logout' %}" >Log out</a>
-        </li>
-
-        <li>
-          <a >Welcome: {{ user.username }}</a>
-        </li>
-          {% else %}
+          <li><a href="{% url 'logout' %}" >Log out</a></li>
+          <li><a >Welcome: {{ user.username }}</a></li>
+        {% else %}
           <li><a class='nav navbar-right' href="{% url 'login' %}" ><span class="glyphicon glyphicon-user"></span></a></li>
         {% endif %}
 

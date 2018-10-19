@@ -2,19 +2,7 @@
 
 {% block content %}
 
-
-        <h1 class='posttitle loader'>{{ post.title }}</h1>
-
-        {% if customers.purchased_date %}
-            <div class="date postdate">
-                {{ purchased.published_date }}
-            </div>
-
-        {% else %}
-            <a class="btn btn-default" href="">Not purchased</a>
-        {% endif %}
-
-      <p class='postcontent' >{{ customers.product|safe|linebreaksbr }}</p>
-
+        <h3>Detail page</h3>
+        <h1 class='post title loader'>{{ customer.First_name }}</h1>
 
 {% endblock %}

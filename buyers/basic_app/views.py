@@ -9,34 +9,27 @@ from django.views.generic import (TemplateView,ListView,
                                   UpdateView,DeleteView)
 
 from django.urls import reverse_lazy
+from base.views import GenericModalCreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-class AboutView(TemplateView):
-    template_name = 'about.html'
 
-class AppraisalView(TemplateView):
+class AppraisalView(LoginRequiredMixin, TemplateView):
     template_name = 'appraisal.html'
 
-class InventoryView(TemplateView):
+class InventoryView(LoginRequiredMixin, TemplateView):
     template_name = 'inventory.html'
 
-class PurchaseView(TemplateView):
+class PurchaseView(LoginRequiredMixin, TemplateView):
     template_name = 'purchase.html'
 
-class CustomersListView(ListView):
+class CustomersListView(LoginRequiredMixin, ListView):
     model = Customers
 
-    def get_queryset(self):
-        return Customers.objects.filter(purchased_date__lte=timezone.now()).order_by('-purchased_date')
-
-class CustomersDetailView(DetailView):
+class CustomersDetailView(LoginRequiredMixin, DetailView):
     model = Customers
 
-class CreateCustomersView(LoginRequiredMixin,CreateView):
+class CreateCustomersView(LoginRequiredMixin, CreateView):
     login_url = '/login/'
     redirect_field_name = 'basic_appp/customers_detail.html'
-
     form_class = CustomersForm
-
     model = Customers
-
