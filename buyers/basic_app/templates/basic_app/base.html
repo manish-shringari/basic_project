@@ -15,7 +15,7 @@
 
 
         {# Custom CSS#}
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'css/basic_app.css' %}">
 
         {# Fonts#}
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Russo+One" rel="stylesheet">
@@ -42,8 +42,11 @@
 
       <ul class="nav navbar-nav navbar-right">
         {% if user.is_authenticated %}
-          <li><a href="{% url 'logout' %}" >Log out</a></li>
-          <li><a >Welcome: {{ user.username }}</a></li>
+        <li>
+          <a href="{% url 'customers_new' %}" >New User</a>
+        </li>
+            <li><a href="{% url 'logout' %}" >Log out</a></li>
+            <li><a >Welcome: {{ user.username }}</a></li>
         {% else %}
           <li><a class='nav navbar-right' href="{% url 'login' %}" ><span class="glyphicon glyphicon-user"></span></a></li>
         {% endif %}

@@ -9,7 +9,6 @@ from django.views.generic import (TemplateView,ListView,
                                   UpdateView,DeleteView)
 
 from django.urls import reverse_lazy
-from base.views import GenericModalCreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 

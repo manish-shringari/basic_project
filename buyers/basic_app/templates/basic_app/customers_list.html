@@ -4,9 +4,7 @@
 <div class="topnav-right">
     <p>
         <div class="text-right">
-        {% if user.is_authenticated %}
-            <u><b><a class="text-right"  href="{% url 'customers_new' %}" >New User</a></b></u>
-        {% endif %}
+
         </div>
     </p>
     {% for customer in customers_list %}
