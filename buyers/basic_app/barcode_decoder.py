@@ -5,8 +5,6 @@ import glob, os
 def get_data():
     #img_path = "C:/Users/SHRIM006/Downloads/bkup/basic_project/buyers/basic_app/vin.jpg"
     li = glob.glob('*.jpg')
-    print li
-
     #img = cv2.imread(img_path)
     img = cv2.imread(li[0])
     barcode = pyzbar.decode(img)
