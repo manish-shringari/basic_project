@@ -15,7 +15,7 @@ class Customers(models.Model):
     First_name = models.CharField(max_length=200, null=True,blank=True)
     Last_name = models.CharField(max_length=200, null=True,blank=True)
     Cell_number = models.IntegerField(blank=True, null=True)
-    Email = models.EmailField()
+    Email = models.EmailField(blank=True, null=True)
     User_type = models.IntegerField('User Type', choices=USER_TYPE, null=True,blank=True)
 
     def get_absolute_url(self):
