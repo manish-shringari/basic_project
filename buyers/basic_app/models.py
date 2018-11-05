@@ -3,9 +3,9 @@ from django.utils import timezone
 from django.core.urlresolvers import reverse
 
 USER_TYPE = (
-    (1, "General User"),
-    (2, "Special User"),
-    (3, "Active User"),
+    (1, "admin"),
+    (2, "buyer"),
+    (3, "manager"),
     (4, "Other"),
 )
 
@@ -23,3 +23,13 @@ class Customers(models.Model):
 
     def __str__(self):
         return self.First_name
+
+class Vehicle(models.Model):
+    #document = models.FileField()
+    vin = models.FileField(null=True,blank=True)
+    make = models.CharField(max_length=200, null=True,blank=True)
+    model = models.CharField(max_length=200, null=True,blank=True)
+
+    def get_absolute_url(self):
+        return reverse("inventory")
+

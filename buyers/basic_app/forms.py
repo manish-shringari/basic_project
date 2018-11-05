@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Customers
+from .models import Customers, Vehicle
 
 
 class CustomersForm(forms.ModelForm):
@@ -10,3 +10,7 @@ class CustomersForm(forms.ModelForm):
         fields = ('First_name','Last_name', 'Cell_number', 'Email', 'User_type')
 
 
+class VehicleForm(forms.ModelForm):
+    class Meta:
+        model = Vehicle
+        fields = ('vin',)
