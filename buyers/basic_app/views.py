@@ -25,7 +25,7 @@ class InventoryView(LoginRequiredMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super(InventoryView, self).get_context_data(**kwargs)
         data = barcode_decoder.get_data()
-        context.update({'data': data})
+        context['data'] = data
         return context
 
 class PurchaseView(LoginRequiredMixin, TemplateView):
