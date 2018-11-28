@@ -13,4 +13,4 @@ class CustomersForm(forms.ModelForm):
 class VehicleForm(forms.ModelForm):
     class Meta:
         model = Vehicle
-        fields = ('vin',)
+        fields = ('vin','vin_num')

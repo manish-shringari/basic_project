@@ -27,9 +27,10 @@ class Customers(models.Model):
 class Vehicle(models.Model):
     #document = models.FileField()
     vin = models.FileField(null=True,blank=True)
+    vin_num = models.CharField(max_length=200, null=True,blank=True)
     make = models.CharField(max_length=200, null=True,blank=True)
     model = models.CharField(max_length=200, null=True,blank=True)
 
     def get_absolute_url(self):
-        return reverse("inventory")
+        return reverse("appraisal_detail")
 
