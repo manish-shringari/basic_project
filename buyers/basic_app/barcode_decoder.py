@@ -4,7 +4,7 @@ import glob, os, sys
 import requests
 import json
 
-api_key = 'CJzxYTdrGnS0qK6xdFIfCiV6qBjBiwVA'
+api_key = 'xxxxxxxx'
 def get_data(vin):
     li = glob.glob('*.jpg')
     if li:
